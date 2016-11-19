@@ -60,7 +60,8 @@ public class LinkedList {
 		if (size == 0) {
 			throw new Exception("likedlist is empty , can not remove head node");
 		}
-		head = head.getNext();
+		head.setData(head.getNext().getData());
+		head.setNext(head.getNext().getNext());
 		size--;
 		return true;
 	}
@@ -71,8 +72,8 @@ public class LinkedList {
 			throw new Exception("likedlist is empty , can not remove tail node");
 		}
 		size--;
-		tail = getByIndex(size);
-		tail.setNext(null);
+		Node newTail = getByIndex(size);
+		newTail.setNext(null);
 		return true;
 	}
 
@@ -82,7 +83,8 @@ public class LinkedList {
 			throw new Exception("likedlist is empty , can not remove any node");
 		}
 		Node indexNode = getByIndex(index);
-		indexNode = indexNode.getNext();
+		indexNode.setData(indexNode.getNext().getData());
+		indexNode.setNext(indexNode.getNext().getNext());
 		size--;
 		return true;
 	}

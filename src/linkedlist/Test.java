@@ -15,10 +15,12 @@ public class Test {
 		list.insertTail("t4");
 		
 		try {
-			list.insertAfter(9, "t5");
+//			list.insertAfter(9, "t5");
+//			
+//			list.removeHead();
+//			list.removeTail();
 			
-			list.removeHead();
-			list.removeTail();
+			list.removeIndex(2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
